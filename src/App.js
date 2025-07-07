@@ -1,5 +1,6 @@
 import React from "react";
 import Dictionary from "./Dictionary";
+import Footer from "./footer";
 
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
           <Dictionary />
         </main>
       </div>
-      <footer className="text-center">coded by Noxolo Siya Ndlovu</footer>
+      <Footer className="text-center" />
     </div>
   );
 }
