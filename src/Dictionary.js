@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Definitions from "./Definitions";
 import "./Dictionary.css";
+import Synonyms from "./Synonyms";
 
 export default function Dictionary() {
   let [keyword, setKeyword] = useState("");
@@ -30,6 +31,7 @@ export default function Dictionary() {
       </form>
 
       <Definitions definitions={definitions} word={keyword} />
+      <Synonyms />
     </div>
   );
 }
