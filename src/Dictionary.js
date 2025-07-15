@@ -31,7 +31,7 @@ export default function Dictionary() {
       </form>
 
       <Definitions definitions={definitions} word={keyword} />
-      <Synonyms />
+      <Synonyms definitions={definitions} />
     </div>
   );
 }

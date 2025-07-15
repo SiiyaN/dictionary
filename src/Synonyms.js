@@ -1,5 +1,16 @@
 import React from "react";
 
 export default function Synonyms(props) {
-  return <div className="synonyms">Synonyms</div>;
+  if (props.definitions && props.definitions[0].synonyms) {
+    return (
+      <div className="Synonyms">
+        <h2>
+          <strong>Synonyms:</strong>
+        </h2>
+        <p>{props.definitions[0].synonyms.join(", ")}</p>
+      </div>
+    );
+  } else {
+    return null;
+  }
 }
