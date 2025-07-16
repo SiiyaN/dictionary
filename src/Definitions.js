@@ -7,7 +7,7 @@ export default function Definitions(props) {
         <h2>
           Definition for: <strong>{props.word}</strong>
         </h2>
-        <p>{props.definitions[0].definition}</p>
+        <p>{props.definitions[1].definition}</p>
       </div>
     );
   } else {

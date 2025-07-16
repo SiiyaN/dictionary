@@ -3,14 +3,17 @@ import axios from "axios";
 import Definitions from "./Definitions";
 import "./Dictionary.css";
 import Synonyms from "./Synonyms";
+import Phonetics from "./Phonetics";
 
 export default function Dictionary() {
   let [keyword, setKeyword] = useState("");
   let [definitions, setDefinitions] = useState(null);
+  let [phonetics, setPhonetics] = useState(null);
 
   function handleResponse(response) {
-    console.log(response.data.meanings);
+    console.log(response.data);
     setDefinitions(response.data.meanings);
+    setPhonetics(response.data.phonetics);
   }
 
   function search(event) {
@@ -32,6 +35,7 @@ export default function Dictionary() {
 
       <Definitions definitions={definitions} word={keyword} />
       <Synonyms definitions={definitions} />
+      <Phonetics phonetics={phonetics} />
     </div>
   );
 }
