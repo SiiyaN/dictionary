@@ -1,13 +1,19 @@
 import React from "react";
 
 export default function Definitions(props) {
-  if (props.definitions) {
+  if (props.definitions && props.definitions.length > 0) {
+    const firstMeaning = props.definitions[1];
+
     return (
       <div className="Definitions">
-        <h2>
-          Definition for: <strong>{props.word}</strong>
-        </h2>
-        <p>{props.definitions[1].definition}</p>
+        Definition for <strong>{props.word}</strong>
+        <p>
+          <strong>{firstMeaning.partOfSpeech}</strong>:{" "}
+          {firstMeaning.definition}
+        </p>
+        {firstMeaning.example && (
+          <p className="example">Example: "{firstMeaning.example}"</p>
+        )}
       </div>
     );
   } else {

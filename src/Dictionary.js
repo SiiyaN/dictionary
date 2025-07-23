@@ -8,12 +8,12 @@ import Phonetics from "./Phonetics";
 export default function Dictionary() {
   let [keyword, setKeyword] = useState("");
   let [definitions, setDefinitions] = useState(null);
-  let [phonetics, setPhonetics] = useState(null);
+  let [phonetic, setPhonetic] = useState("");
 
   function handleResponse(response) {
     console.log(response.data);
     setDefinitions(response.data.meanings);
-    setPhonetics(response.data.phonetics);
+    setPhonetic(response.data.phonetic);
   }
 
   function search(event) {
@@ -34,8 +34,8 @@ export default function Dictionary() {
       </form>
 
       <Definitions definitions={definitions} word={keyword} />
+      <Phonetics phonetic={phonetic} />
       <Synonyms definitions={definitions} />
-      <Phonetics phonetics={phonetics} />
     </div>
   );
 }
