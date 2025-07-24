@@ -1,3 +1,7 @@
+.App {
+  max-width: 960px;
+  margin: 0 auto;
+}
 .Dictionary {
   max-width: 600px;
   margin: 50px auto;
